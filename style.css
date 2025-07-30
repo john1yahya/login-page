@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    background-color: white;
+    color: black;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.form{
+    background-color: rgba(134, 177, 233, 0.548);
+    padding: 100px 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px  gray;
+    font-weight: bold;
+    position: relative;
+    width: 400px;
+}
+.inputs{
+    display: grid;
+    gap: 20px;
+}
+
+.form-style{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+.border-radius-5px{
+    border-radius: 5px;
+    padding: 15px 30px;
+}
+
+.inputs input{
+    background-color: rgb(235, 235, 235);
+    border: none;
+    width:25em;
+
+}
+input:focus{
+    border: none;
+}
+
+input:active{
+    border: none;
+}
+.form-style-flex{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.output{
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    font-size: 17px;
+}
+.signButton{
+    background-color: rgba(0, 0, 255, 0.829);
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+.inputs label{
+    font-size: 20px;
+}
+.creat-acc{
+    background-color: rgb(4, 175, 4);
+}
+.create-account-container{
+    display: none;
+    flex-direction: column;
+    gap: 4em;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(134, 177, 233);
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+
+}
+.cr input{
+    width:300px;
+}
+.creat-acc2, .cancel{
+    padding: 10px 20px;
+    width: 60%;
+    background-color: rgb(4, 175, 4) ;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight:bold;
+}
+.cancel{
+    background-color:rgb(247, 72, 72);
+}
