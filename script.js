@@ -99,6 +99,8 @@ creatButton.addEventListener('click', () =>
         password: password2.value
         });
         console.log(users);
+        document.querySelector('.cr').style.display = 'none'
+
     }
     refreshInput(email2, password2); 
      
