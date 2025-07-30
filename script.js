@@ -81,15 +81,15 @@ let passwordElement2 = password2.value;
 
 creatButton.addEventListener('click', () =>
     {
-        let pass = password2.value.trim();//trim() function to remove the exra spaces at the begining and at te end 
-        let em = email2.value.trim();
+        let pass = password2.value;//trim() function to remove the exra spaces at the begining and at te end 
+        let em = email2.value;
 
-    if (pass === '' || em === ''){
+    if (pass.trim() === '' || em.trim() === ''){
 
         console.log('enter email and password');
         console.log(users);
 
-    } else if (/\s/.test(pass) && /\s /.test(em) ){
+    } else if ( /\s/.test(pass) || /\s/.test(em) ){
         console.log('there is space ');
         alert('hid espace');
     }
