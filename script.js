@@ -89,9 +89,9 @@ creatButton.addEventListener('click', () =>
         console.log('enter email and password');
         console.log(users);
 
-    } else if (/\s/.test(pass) || /\s /.test(em) ){
+    } else if (/\s/.test(pass) && /\s /.test(em) ){
         console.log('there is space ');
-        alert('hid espace')
+        alert('hid espace');
     }
       else{
         users.push({
