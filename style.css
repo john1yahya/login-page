@@ -31,14 +31,14 @@ body{
     display: grid;
     gap: 20px;
     width: 100%;
+    
 
 }
 
 .form-style{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
-    
+    gap: 10px;    
 }
 .border-radius-5px{
     border-radius: 5px;
@@ -48,10 +48,7 @@ body{
 .inputs input{
     background-color: rgb(235, 235, 235);
     border: none;
-    width:15em;
-    width: 100%;
-    
-
+    margin: 0px 10px;
 }
 input:focus{
     border: none;
