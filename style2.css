@@ -22,8 +22,10 @@ body{
     box-shadow: 5px 5px 10px rgb(201, 201, 201),
                 -5px -5px 10px rgb(223, 223, 223);
     background-color: rgba(242, 240, 240, 0.833);
-    padding: 20px;
+    padding: 20px ;
     border-radius: 30px;
+    position: relative;
+
     
 }
 .headers h1{

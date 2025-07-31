@@ -1,8 +1,8 @@
 .back-icon img{
     width: 50px;
     position: absolute;
-    top: 80px;
-    left: 70px;
+    top: 1em;
+    left: 1em;
     background-color:  rgba(246, 244, 244, 0.289);
     border-radius: 50%;
     box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.681),
