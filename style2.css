@@ -17,8 +17,8 @@ body{
     align-items: center;    
     justify-content: space-evenly;
     align-content: center;
-    height: 90vh;
-    width: 90vw;
+    height: 90%;
+    width: 90%;
     box-shadow: 5px 5px 10px rgb(201, 201, 201),
                 -5px -5px 10px rgb(223, 223, 223);
     background-color: rgb(247, 247, 247);
@@ -50,7 +50,8 @@ body{
 }
 .form-group label{
     font-size: small;
-    color:rgb(21, 45, 97) ;
+    color:rgb(21, 45, 97);
+    margin-left: 10px;
 }
 .form-group{
     display: grid;
@@ -66,6 +67,7 @@ body{
     text-decoration: none;
     color:  rgb(21, 45, 97) ;
     text-align: end;
+    font-size: small;
 }
 .icons img{
     height: 50px;
