@@ -25,7 +25,7 @@ import {users} from "../data/accounts.js";
             document.querySelectorAll('.icons').forEach((icon) => {
             icon.innerHTML = '';
             });
-        }, 1000)
+        }, 3000)
             
         console.log('valid');
     };
@@ -54,7 +54,7 @@ document.querySelector('.signInButton')
         stylingValidation(result);
         setTimeout(() => {
             refrechInput(email, password)
-        }, 1000);
+        }, 3000);
     });
 
  
