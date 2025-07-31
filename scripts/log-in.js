@@ -1,4 +1,4 @@
-import {users} from "../data/accounts.js";
+import {users} from "../scripts/create-account.js";
 
 // first step we added event listener
 
@@ -27,7 +27,6 @@ import {users} from "../data/accounts.js";
             });
         }, 3000)
             
-        console.log('valid');
     };
     
     function refrechInput(){
@@ -61,4 +60,4 @@ document.querySelector('.signInButton')
         }, 3000);
     });
 
- 
+ console.log(users)
