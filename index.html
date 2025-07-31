@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Login page</title>
+    <link rel="stylesheet" href="style2.css">
+    <title>login page</title>
 </head>
 <body>
-    <div class="form">
-        <h1 style="text-align: center;">welcome</h1>
-        <div class="inputs">
-                <div class="fist-name-class form-style">
-                <label for="first-Name" id="first-name">Email</label>
-                <input type="email" class="first-name-input border-radius-5px js-enter" type="email" placeholder="Enter your email" required>
-            </div>
-            <div class="last-name-class form-style">
-                <label for="last-name">Password</label>
-                <input type="password" class="last-name-input border-radius-5px js-enter" placeholder="Enter your password" required>
-            </div>
+    <form id="login-form">
+        <div class="headers">
+            <h3>Welcome</h3>
+            <h1>Sign In</h1>
         </div>
 
-        <div class="form-style-flex">
-            <button class="add border-radius-5px signButton" type="submit"><a href="index2.html">sign in</a>sign in</button>
-            <button class="add border-radius-5px signButton creat-acc" type="submit">Create new account</button>
+        <div class="form-input-container">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="login-email" class="login-email " required>
+                <i class="icons">
+                    
+                </i>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="login-password" class="login-password"  required>
+                <i class="icons">
 
-            <p class="output border-radius-5px">output</p>
-            <div class="create-account-container cr">
-                <h1>create new accoutn</h1>
-                <div class="inputs">
-                <div class="fist-name-class form-style">
-                <label for="first-Name" id="first-name">Email</label>
-                <input type="email" class="first-name-input2 border-radius-5px js-enter" type="email" placeholder="Enter your email" required>
+                </i>
+                <a href="">forget password?</a>
             </div>
-            <div class="last-name-class form-style">
-                <label for="last-name">Password</label>
-                <input type="password" class="last-name-input2 border-radius-5px js-enter" placeholder="Enter your password" required>
-                
-            </div>
-            </div>
-            <button class="creat-acc2">create</button>
-            <button class="cancel"> cancel</button>
+            <button type="submit" class="signInButton" >Sign in</button>
         </div>
-    </div>    
-    <script type="module" src="script.js"></script>
+            
+        <div class="sign-up-link">
+            <p>Don't have an account? <a href="create-account.html">Sign Up</a></p>
+        </div>
+    </form>
+    <script type="module" src="scripts/log-in.js"></script>
+
 </body>
 </html>
