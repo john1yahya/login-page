@@ -25,7 +25,8 @@ export let users = [];
             email: emailElement,
             password: passwordElement
         }
-    )
+    );
+    localStorage.setItem('users',JSON.stringify(users));
     console.log(users);
     // i should use local storage
  });
