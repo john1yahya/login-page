@@ -4,37 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="create-account.css
+    ">
     <title>login page</title>
 </head>
 <body>
+    <div class="back-icon">
+        <a href="index2.html">
+            <img src="icons/left.png" alt="">
+        </a>
+    </div>
     <form id="login-form">
         <div class="headers">
-            <h3>Welcome</h3>
-            <h1>Sign In</h1>
+            <h1>Sign Up</h1>
         </div>
 
         <div class="form-input-container">
             <div class="form-group">
+                <label for="username">Username</label>
+                <input type="username" id="create-username" class="create-username" required>
+                <i class="icons">
+                    <!-- <img src="" class="icon"> -->
+                </i>                
+            </div>
+
+            <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="login-email" class="login-email" placeholder="Enter your email" required>
+                <input type="email" id="create-email" class="create-email" required>
+                <i class="icons">
+                    <!-- <img src="" class="icon"> -->
+                </i>                
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="create-password" class="create-password" required>
+                <i class="icons">
+                    <!-- <img src="/icons/check.png" class="icon"> -->
+                </i>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" class="confirm-password" required>
                 <i class="icons">
                     <!-- <img src="" class="icon"> -->
                 </i>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="login-password" class="login-password" placeholder="Enter your password" required>
-                <i class="icons">
-                    <!-- <img src="/icons/check.png" class="icon"> -->
-                </i>
-                <a href="">forget password?</a>
-            </div>
-            <button type="submit" class="signInButton" >Sign in</button>
+
+           
+            
+            <button type="submit" class="signInButton" >Sign Un</button>
         </div>
             
         <div class="sign-up-link">
             <a href="sign-up">Sign Up</a>
         </div>
+
     </form>
 
 </body>

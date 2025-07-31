@@ -21,12 +21,9 @@ body{
     width: 90%;
     box-shadow: 5px 5px 10px rgb(201, 201, 201),
                 -5px -5px 10px rgb(223, 223, 223);
-    background-color: rgb(247, 247, 247);
+    background-color: rgba(242, 240, 240, 0.833);
     padding: 20px;
     border-radius: 30px;
-    
-}
-.headers{
     
 }
 .headers h1{
@@ -44,9 +41,9 @@ body{
     height: 50px;
     border: none;
     box-shadow: 4px 2px 10px rgb(203, 202, 202),
-                -4px -6px 5px rgb(255, 255, 255);
+                -4px -6px 10px rgb(255, 255, 255);
     border-radius: 10px;
-    background-color: rgb(247, 246, 246);
+    background-color: rgba(247, 246, 246, 0);
 }
 .form-group label{
     font-size: small;
