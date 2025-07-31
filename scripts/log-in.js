@@ -30,7 +30,7 @@ import {users} from "../data/accounts.js";
         console.log('valid');
     };
     
-    function refrechInput(email, password){
+    function refrechInput(){
         email.value = '';
         password.value = '';
     }
@@ -46,6 +46,10 @@ document.querySelector('.signInButton')
         let emailElement = email.value;
         let passwordElement = password.value;
 
+        if (passwordElement === '' || emailElement === ''){
+            stylingValidation(false)
+            return;
+        }
 
         let result = users.find((user) => {
             return user.email === emailElement && user.password === passwordElement;
@@ -53,7 +57,7 @@ document.querySelector('.signInButton')
 
         stylingValidation(result);
         setTimeout(() => {
-            refrechInput(email, password)
+            refrechInput();
         }, 3000);
     });
 
