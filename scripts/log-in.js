@@ -1,10 +1,9 @@
-// import { users } from "./create-account";
 
 // import {users} from "../scripts/create-account.js";
 const users = JSON.parse(localStorage.getItem('users'))
 // first step we added event listener
 
-   function stylingValidation(result){
+    function stylingValidation(result){
         let iconName ;
         let validation ;
         if (result){

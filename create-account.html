@@ -28,14 +28,19 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="create-email" class="create-email" required>
-                <i class="icons"></i>                
+                <input type="email" id="create-email" class="create-email notValid" required>
+                <i class="icons">
+                    <img src="assets/icons/exclamation.png" class="icon">
+                    <p style="color: red;">Enter a valid email</p>
+                </i>     
+
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="create-password" class="create-password" required>
+                <input type="password" id="create-password" class="create-password valid" required>
                 <i class="icons">
-                    <!-- <img src="/icons/check.png" class="icon"> -->
+                    <img src="assets/icons/check.png" class="icon">
+                    <p style="color: green;">pleas enter more than 6 digits</p>
                 </i>
             </div>
 
@@ -43,7 +48,7 @@
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" class="confirm-password" required>
                 <i class="icons">
-                    <!-- <img src="" class="icon"> -->
+                    <img src="assets/icons/check.png" class="icon">
                 </i>
             </div>
 
