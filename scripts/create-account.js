@@ -134,3 +134,4 @@ function validationstyle( inputClassName, messageClassName, errorMessage, valida
     iconName.innerHTML = `<img src="assets/icons/${validationIcon}.png" class="icon">`
     
 }
+//n7ya3abit
