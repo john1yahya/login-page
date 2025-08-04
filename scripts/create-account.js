@@ -37,6 +37,15 @@ export let users = [];
     localStorage.setItem('users',JSON.stringify(users));
     console.log(users);
  });
+ function validUsername(username){
+    usernameElement = username.value;
+    if(username === ''){
+        return false
+    }else{
+        return true;
+    }
+ }
+
 
 
 // function to check if the email is valid 
@@ -49,7 +58,7 @@ export function emailValidation(email){
             return false;
     }
     else if(result){
-        validationstyle('create-email', 'js-email-message', 'invalid email', 'exclamation')
+        validationstyle('create-email', 'js-email-message', '' , 'check')
         return true;
     };
 }
@@ -59,7 +68,7 @@ export function emailValidation(email){
     const regex = /\s/;
     const result = regex.test(password);
     if (password === '') {
-        validationstyle('create-password','js-password-message','Enter a password pleas','exclamation','valid')
+        validationstyle('create-password','js-password-message','Enter a password pleas','exclamation')
         return false;
     }
     else
@@ -67,11 +76,11 @@ export function emailValidation(email){
         return false;
     }else 
         if(password.length < 6){
-            validationstyle('create-password','js-password-message',`Enter more than 6 digits`,'exclamation','notvalid');
+            validationstyle('create-password','js-password-message',`Enter more than 6 digits`,'exclamation');
             return false;
     }
     else {
-        validationstyle('create-password','js-password-message',`Enter more than 6 digits`,'check');
+        validationstyle('create-password','js-password-message',``,'check');
 
         return true}
     
@@ -81,17 +90,16 @@ export function emailValidation(email){
 
     let passwordConfirmValidationMessage = document.querySelector('.js-password-confirm-message');
 
-    if (passwordElement === checkPasswordElement){
+    if ( passwordElement === checkPasswordElement){
         console.log('password lwl w tnai bhal bhal asat nadi ');
         passwordConfirmValidationMessage.innerHTML = 'Passwords do not match. Please try again';
-         validationstyle( 'js-password-confirm-message', 'js-password-confirm-message', `password is the same`, `check`)
+         validationstyle( 'confirm-password', 'js-password-confirm-message', ``, `check`)
         return true;
     }
     else if(passwordElement !== checkPasswordElement){
         console.log('Passwords do not match. Please try again');
         passwordConfirmValidationMessage.innerHTML = 'Passwords do not match. Please try again';
-        validationstyle( 'js-password-confirm-message', 'js-password-confirm-message', `password do not match`, `check`)
-
+        validationstyle( 'confirm-password', 'js-password-confirm-message', `password do not match`, `exclamation`)
         
         return false;
     }
@@ -114,15 +122,13 @@ function formValidation(emailIsValid, passwordIsValid, passwordIsConfirm){
     }
 };
 
-function validationstyle( inputClassName, messageClassName, errorMessage, validationIcon, validationClass){
+function validationstyle( inputClassName, messageClassName, errorMessage, validationIcon){
 
-    let inputElement = document.querySelector(`.${inputClassName}`);
-    inputElement.classList.add(`${validationClass}`);
 
     const element = document.querySelector(`.${messageClassName}`);
     element.innerHTML = `${errorMessage}`;
 
-    element.classList.add('invalid');
+    element.classList.add(`invalid`);
 
     let iconName = document.querySelector(`.icons.${inputClassName}`)
     iconName.innerHTML = `<img src="assets/icons/${validationIcon}.png" class="icon">`
