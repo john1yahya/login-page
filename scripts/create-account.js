@@ -23,11 +23,12 @@ export let users = [];
     const emailIsValid = emailValidation(emailElement);
     const passwordIsValid = passwordVlaidation(passwordElement);
     const passwordIsConfirm = passwordConfirmation(passwordElement, checkPasswordElement);
+    const usernameIsValid = usernameValidation(usernameElement)
 
 
-    formValidation(emailIsValid, passwordIsValid, passwordIsConfirm);
+    formValidation(usernameIsValid,emailIsValid, passwordIsValid, passwordIsConfirm);
 
-
+    console.log(usernameIsValid, 'username validation');
     console.log(emailIsValid, 'email validation');
     console.log(passwordIsValid,'password condition');
     console.log(passwordIsConfirm,'confirmation');
@@ -103,11 +104,23 @@ export function emailValidation(email){
         
         return false;
     }
-} ;
-// function to check if the form is valid = all of the conditions valid 
-function formValidation(emailIsValid, passwordIsValid, passwordIsConfirm){
+};
+function usernameValidation(username){
+    if(username === ''){
+        validationstyle('create-username', 'js-username-message', 'please enter a valid username', `exclamation`);
+        return false;
+    }
+    else{
+        validationstyle('create-username', 'js-username-message', '', `check`);
+        return true;
+    }
+    
 
-    if(emailIsValid && passwordIsValid && passwordIsConfirm){
+}
+// function to check if the form is valid = all of the conditions valid 
+function formValidation(usernameIsValid ,emailIsValid, passwordIsValid, passwordIsConfirm){
+
+    if(usernameIsValid && emailIsValid && passwordIsValid && passwordIsConfirm){
         
         users.push(
         {
@@ -133,5 +146,4 @@ function validationstyle( inputClassName, messageClassName, errorMessage, valida
     let iconName = document.querySelector(`.icons.${inputClassName}`)
     iconName.innerHTML = `<img src="assets/icons/${validationIcon}.png" class="icon">`
     
-}
-//n7ya3abit
+};
