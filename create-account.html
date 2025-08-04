@@ -23,34 +23,35 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="username" id="create-username" class="create-username" required>
-                <i class="icons"></i>                
+                <i class="icons"></i> 
+                <p class=" message"></p>
+              
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="create-email" class="create-email notValid" required>
-                <i class="icons">
-                    <img src="assets/icons/exclamation.png" class="icon">
-                    <p style="color: red; margin-top: 10px;
-                    font-size: 14px;">Enter a valid email</p>
+                <input type="email" id="create-email" class="create-email" required>
+                <i class="icons create-email">
                 </i>     
+                <p class="js-email-message message"></p>
+
 
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="create-password" class="create-password valid" required>
-                <i class="icons">
-                    <img src="assets/icons/check.png" class="icon">
-                    <p style="color: green; margin-top: 10px;font-size: 12px;">pleas enter more than 6 digits</p>
+                <input type="password" id="create-password" class="create-password" required>
+                <i class="icons create-password">
                 </i>
+                    <p class="js-password-message message" style="font-size: 12px;"></p>
+                
             </div>
 
             <div class="form-group">
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" class="confirm-password" required>
-                <i class="icons">
-                    <img src="assets/icons/check.png" class="icon">
+                <i class="icons confirm-password">
                 </i>
+                <p class="js-password-confirm-message message ">please enter a valid email and password</p>
             </div>
 
            
@@ -66,3 +67,4 @@
     <script type="module" src="scripts/create-account.js"></script>
 </body>
 </html>
+<!-- validationstyle(inputclassname, messageclassname, error message) -->

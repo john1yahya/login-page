@@ -1,5 +1,3 @@
-// import { users } from "
-import {refrechInput} from "./log-in.js";
 
 export let users = [];
 
@@ -12,6 +10,7 @@ export let users = [];
 
  document.querySelector('.signInButton').addEventListener('click', (event) => {
     event.preventDefault();
+
     let usernameElement = username.value;
     let emailElement = email.value;
     let passwordElement = password.value;
@@ -20,14 +19,11 @@ export let users = [];
     console.log('passwordElement:', passwordElement);
     console.log('checkPasswordElement:', checkPasswordElement);
 
-    
-    emailValidation(emailElement);
-    passwordVlaidation(passwordElement);
-    passwordConfirmation(passwordElement, checkPasswordElement);
 
     const emailIsValid = emailValidation(emailElement);
     const passwordIsValid = passwordVlaidation(passwordElement);
     const passwordIsConfirm = passwordConfirmation(passwordElement, checkPasswordElement);
+
 
     formValidation(emailIsValid, passwordIsValid, passwordIsConfirm);
 
@@ -43,52 +39,64 @@ export let users = [];
  });
 
 
+// function to check if the email is valid 
+export function emailValidation(email){
 
-function emailValidation(email)
-{
-
-    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ ;
+    const regex = /^(?!\.)(?!.*\.@)(?!.*@.*@)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(?!-)[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/ ;
     let result = regex.test(email);
     if (!result){
-        console.log('email is not valid');
-        return false;
+        validationstyle('create-email', 'js-email-message', 'invalid email', 'exclamation')
+            return false;
     }
     else if(result){
-        console.log('email is valid');
+        validationstyle('create-email', 'js-email-message', 'invalid email', 'exclamation')
         return true;
-    }   
-
-}
- function passwordVlaidation(password){
-    let regex = /\s/;
-    let result = regex.test(password);
-
-    if(!result){
-
-        if(password.length > 6){
-        console.log('password is valid !!!');
-        return true;
-        }
-    }else{
-        if(result){
-            if(password.length < 6){
-                return false;
-            }
-        }
     };
-};
+}
+// function to chceck if the password is valid 
+ function passwordVlaidation(password){
 
+    const regex = /\s/;
+    const result = regex.test(password);
+    if (password === '') {
+        validationstyle('create-password','js-password-message','Enter a password pleas','exclamation','valid')
+        return false;
+    }
+    else
+    if (result){
+        return false;
+    }else 
+        if(password.length < 6){
+            validationstyle('create-password','js-password-message',`Enter more than 6 digits`,'exclamation','notvalid');
+            return false;
+    }
+    else {
+        validationstyle('create-password','js-password-message',`Enter more than 6 digits`,'check');
+
+        return true}
+    
+};
+// function to check if the password confirm
  function passwordConfirmation(passwordElement, checkPasswordElement){
+
+    let passwordConfirmValidationMessage = document.querySelector('.js-password-confirm-message');
+
     if (passwordElement === checkPasswordElement){
         console.log('password lwl w tnai bhal bhal asat nadi ');
-        return true
+        passwordConfirmValidationMessage.innerHTML = 'Passwords do not match. Please try again';
+         validationstyle( 'js-password-confirm-message', 'js-password-confirm-message', `password is the same`, `check`)
+        return true;
     }
     else if(passwordElement !== checkPasswordElement){
-        console.log('pleas hdrna m3ak dkhl password lwl w tani bhal bhal');
-        return false
+        console.log('Passwords do not match. Please try again');
+        passwordConfirmValidationMessage.innerHTML = 'Passwords do not match. Please try again';
+        validationstyle( 'js-password-confirm-message', 'js-password-confirm-message', `password do not match`, `check`)
+
+        
+        return false;
     }
 } ;
-
+// function to check if the form is valid = all of the conditions valid 
 function formValidation(emailIsValid, passwordIsValid, passwordIsConfirm){
 
     if(emailIsValid && passwordIsValid && passwordIsConfirm){
@@ -105,3 +113,18 @@ function formValidation(emailIsValid, passwordIsValid, passwordIsConfirm){
         console.log('form is not valid');
     }
 };
+
+function validationstyle( inputClassName, messageClassName, errorMessage, validationIcon, validationClass){
+
+    let inputElement = document.querySelector(`.${inputClassName}`);
+    inputElement.classList.add(`${validationClass}`);
+
+    const element = document.querySelector(`.${messageClassName}`);
+    element.innerHTML = `${errorMessage}`;
+
+    element.classList.add('invalid');
+
+    let iconName = document.querySelector(`.icons.${inputClassName}`)
+    iconName.innerHTML = `<img src="assets/icons/${validationIcon}.png" class="icon">`
+    
+}
