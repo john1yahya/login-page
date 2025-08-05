@@ -1,3 +1,4 @@
+import { showHidePass } from "./log-in.js";
 
 export let users = [];
 
@@ -23,20 +24,11 @@ export let users = [];
     const emailIsValid = emailValidation(emailElement);
     const passwordIsValid = passwordVlaidation(passwordElement);
     const passwordIsConfirm = passwordConfirmation(passwordElement, checkPasswordElement);
-    const usernameIsValid = usernameValidation(usernameElement)
-
+    const usernameIsValid = usernameValidation(usernameElement);
 
     formValidation(usernameIsValid,emailIsValid, passwordIsValid, passwordIsConfirm);
-
-    console.log(usernameIsValid, 'username validation');
-    console.log(emailIsValid, 'email validation');
-    console.log(passwordIsValid,'password condition');
-    console.log(passwordIsConfirm,'confirmation');
-
-
-    
     localStorage.setItem('users',JSON.stringify(users));
-    console.log(users);
+
  });
  function validUsername(username){
     usernameElement = username.value;
@@ -145,13 +137,5 @@ function validationstyle( inputClassName, messageClassName, errorMessage, valida
 };
 // show and hide password
 document.querySelector('.show-hide-icon').addEventListener('click', () => {
-    const showHideImg = document.querySelector('.confirm-password');
-    if(showHideImg.type === 'password'){
-        showHideImg.type = 'text';
-        document.querySelector('.show-hide-icon').src = 'assets/icons/hide-eye.png'
-    }else {
-    showHideImg.type = 'password';
-        document.querySelector('.show-hide-icon').src = 'assets/icons/eye.png'
-
-    }
+    showHidePass('confirm-password');
 });

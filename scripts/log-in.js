@@ -65,14 +65,16 @@ document.querySelector('.signInButton')
 
     // show and hide password
 document.querySelector('.show-hide-icon').addEventListener('click', () => {
-    const showHideImg = document.querySelector('.login-password');
+    showHidePass('login-password');
+});
+
+export function showHidePass(className){
+    const showHideImg = document.querySelector(`.${className}`);
     if(showHideImg.type === 'password'){
         showHideImg.type = 'text';
         document.querySelector('.show-hide-icon').src = 'assets/icons/hide-eye.png'
     }else {
     showHideImg.type = 'password';
         document.querySelector('.show-hide-icon').src = 'assets/icons/eye.png'
-
     }
-});
-
+}
