@@ -143,7 +143,7 @@ function validationstyle( inputClassName, messageClassName, errorMessage, valida
     iconName.innerHTML = `<img src="assets/icons/${validationIcon}.png" class="icon">`
     
 };
-// 
+// show and hide password
 document.querySelector('.show-hide-icon').addEventListener('click', () => {
     const showHideImg = document.querySelector('.confirm-password');
     if(showHideImg.type === 'password'){
@@ -154,4 +154,4 @@ document.querySelector('.show-hide-icon').addEventListener('click', () => {
         document.querySelector('.show-hide-icon').src = 'assets/icons/eye.png'
 
     }
-})
+});

@@ -61,4 +61,18 @@ document.querySelector('.signInButton')
         }, 3000);
     });
 
- console.log(users)
+ console.log(users);
+
+    // show and hide password
+document.querySelector('.show-hide-icon').addEventListener('click', () => {
+    const showHideImg = document.querySelector('.login-password');
+    if(showHideImg.type === 'password'){
+        showHideImg.type = 'text';
+        document.querySelector('.show-hide-icon').src = 'assets/icons/hide-eye.png'
+    }else {
+    showHideImg.type = 'password';
+        document.querySelector('.show-hide-icon').src = 'assets/icons/eye.png'
+
+    }
+});
+
