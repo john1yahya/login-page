@@ -64,6 +64,7 @@ body{
 .form-input-container{
     display: grid;
     gap: 30px;
+    position: relative;
 }
 .form-group a, a{
     text-decoration: none;

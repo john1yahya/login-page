@@ -89,17 +89,11 @@ export function emailValidation(email){
 // function to check if the password confirm
  function passwordConfirmation(passwordElement, checkPasswordElement){
 
-    let passwordConfirmValidationMessage = document.querySelector('.js-password-confirm-message');
-
     if ( passwordElement === checkPasswordElement){
-        console.log('password lwl w tnai bhal bhal asat nadi ');
-        passwordConfirmValidationMessage.innerHTML = 'Passwords do not match. Please try again';
-         validationstyle( 'confirm-password', 'js-password-confirm-message', ``, `check`)
+        validationstyle( 'confirm-password', 'js-password-confirm-message', ``, `check`)
         return true;
     }
     else if(passwordElement !== checkPasswordElement){
-        console.log('Passwords do not match. Please try again');
-        passwordConfirmValidationMessage.innerHTML = 'Passwords do not match. Please try again';
         validationstyle( 'confirm-password', 'js-password-confirm-message', `password do not match`, `exclamation`)
         
         return false;
@@ -141,9 +135,23 @@ function validationstyle( inputClassName, messageClassName, errorMessage, valida
     const element = document.querySelector(`.${messageClassName}`);
     element.innerHTML = `${errorMessage}`;
 
+    element.classList.remove('.invalid');
+
     element.classList.add(`invalid`);
 
     let iconName = document.querySelector(`.icons.${inputClassName}`)
     iconName.innerHTML = `<img src="assets/icons/${validationIcon}.png" class="icon">`
     
 };
+// 
+document.querySelector('.show-hide-icon').addEventListener('click', () => {
+    const showHideImg = document.querySelector('.confirm-password');
+    if(showHideImg.type === 'password'){
+        showHideImg.type = 'text';
+        document.querySelector('.show-hide-icon').src = 'assets/icons/hide-eye.png'
+    }else {
+    showHideImg.type = 'password';
+        document.querySelector('.show-hide-icon').src = 'assets/icons/eye.png'
+
+    }
+})
